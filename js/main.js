@@ -41,7 +41,7 @@ function begin() {
         contentType: 'application/json; charset=utf-8',
         
         success: (data) => { 
-            //console.log(`JWT TOken : ${data}`)
+            // console.log(`JWT TOken : ${data}`)
             hideSpinner();
             JWT_Token =`${data}`;
             window.location.href = 'home.html';
