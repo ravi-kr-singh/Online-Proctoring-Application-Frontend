@@ -30,6 +30,20 @@ var modalHeader = document.getElementById('modal-header');
 var headerH2 = modalHeader.querySelector('h2');
 var correction = document.getElementById('correction');
 
+var changeChances = 3
+document.addEventListener('visibilitychange', function(){
+	if (changeChances==0){
+		alert("Ending Test");
+		endGame();
+	}
+	else{
+		// document.title = document.visibilityState;
+		alert("WARNING: You have switched tab, this can lead to disqualification"+changeChances);
+		changeChances--;
+		// console.log(document.visibilityState);
+	}
+});
+
 function startGame() {
 	questionDiv.style.display = 'block';
 	answer.style.display = 'block';
