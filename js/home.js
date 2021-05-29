@@ -46,7 +46,7 @@ function nextQuestion() {
 		score.innerHTML = scoreNb;
 		questionP.innerHTML = ask[number].question;
 		answer.value = '';
-	} else if(number === 2) {
+	} else if(number === 4) {
 		finalQuestion();
 	} else {
 		number++;
@@ -66,8 +66,8 @@ function finalQuestion() {
 
 function endGame() {
 		modal.style.display = 'block';
-		headerH2.innerHTML = 'Results';
-		correction.innerHTML = 'You got ' + scoreNb + ' correct answers'; 
+		headerH2.innerHTML = 'Submission Completed.';
+		correction.innerHTML = 'Done!'; 
 }
 
 function resetGame() {
@@ -80,3 +80,4 @@ function resetGame() {
 	scoreNb = 0;
 	number = 0;
 }
+
