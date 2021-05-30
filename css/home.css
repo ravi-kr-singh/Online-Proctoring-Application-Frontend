@@ -155,3 +155,29 @@ textarea[type=text] {
 #question, #answer, #btn, #modal {
 	display: none;
 }
+
+
+.timer{
+	font-size: x-large;
+	color: #ea6153;
+	margin: auto;
+	margin-top: 30px;
+	width: 50%;
+	border: auto;
+	padding: auto;
+	text-align: center;
+	background-color: white;
+}
+
+#video {
+	/* border: 1px solid black; */
+	width: 320px;
+	height: 240px;
+	position: fixed;
+    bottom: 0;
+    right: 0;
+}
+
+#canvas {
+	display: none;
+}
