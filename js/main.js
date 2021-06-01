@@ -44,7 +44,7 @@ function begin() {
             // console.log(`JWT TOken : ${data}`)
             hideSpinner();
             JWT_Token =`${data}`;
-            window.location.href = 'home.html';
+            window.location.href = 'start_test.html';
            
             console.log(JWT_Token)
             

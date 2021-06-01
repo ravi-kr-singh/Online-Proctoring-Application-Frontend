@@ -1,99 +1,26 @@
-var questionDiv = document.getElementById('question');
-var answer = document.getElementById('answer');
-var btn = document.getElementById('btn');
-var modal = document.getElementById('modal');
-var startBtn = document.getElementById('start');
 
-var questionP = document.getElementById('q')
-var ask = [
-	{
-		question: 'What is s the primary difference between process and thread?'
-	},
-	{
-		question: 'List out different OOPS principles?'
-	},
-	{
-		question: 'What is an abstract class?'
-	},
-	{
-		question: 'Distinguish between constructor and method'
-	},
-	{
-		question: 'List out Layers of OSI Model'
-	}
-];
-var score = document.getElementById('score');
-var scoreNb = 0;
-var number = 0;
-
-var modalHeader = document.getElementById('modal-header');
-var headerH2 = modalHeader.querySelector('h2');
-var correction = document.getElementById('correction');
-
-var changeChances = 3
+var changeChances = 5
 document.addEventListener('visibilitychange', function(){
 	if (changeChances==0){
 		alert("Ending Test");
-		endGame();
+		submitTest();
 	}
 	else{
 		// document.title = document.visibilityState;
 		alert("WARNING: You have switched tab, this can lead to disqualification");
 		changeChances--;
-		// console.log(document.visibilityState);
+		 console.log(changeChances);
 	}
 });
 
-function startGame() {
-	questionDiv.style.display = 'block';
-	answer.style.display = 'block';
-	btn.style.display = 'block';
-	startBtn.style.display = 'none';
-	questionP.innerHTML = ask[number].question;
-	score.innerHTML = scoreNb;
+
+
+
+function submitTest() {
+	window.location.href = 'finish_test.html';
 }
 
-function nextQuestion() {
-	if (answer.value === ask[number].answer) {
-		scoreNb++;
-		number++;
-		score.innerHTML = scoreNb;
-		questionP.innerHTML = ask[number].question;
-		answer.value = '';
-	} else if (number === 4) {
-		finalQuestion();
-	} else {
-		number++;
-		questionP.innerHTML = ask[number].question;
-		answer.value = '';
-	}
-}
 
-function finalQuestion() {
-	if (answer.value === 'Green') {
-		scoreNb++;
-		endGame();
-	} else {
-		endGame();
-	}
-}
-
-function endGame() {
-	modal.style.display = 'block';
-	headerH2.innerHTML = 'Submission Completed.';
-	correction.innerHTML = 'Done!';
-}
-
-function resetGame() {
-	modal.style.display = 'none';
-	questionDiv.style.display = 'none';
-	answer.style.display = 'none';
-	btn.style.display = 'none';
-	startBtn.style.display = 'block';
-	answer.value = '';
-	scoreNb = 0;
-	number = 0;
-}
 
 function startTimer(duration, display) {
 	var timer = duration, minutes, seconds;
@@ -115,9 +42,9 @@ function startTimer(duration, display) {
 }
 
 window.onload = function () {
-	var fiveMinutes = 60 * 5,
+	var time_for_test = 60 * 30, //30 Mins
 		display = document.querySelector('#time');
-	startTimer(fiveMinutes, display);
+	startTimer(time_for_test, display);
 };
 
 // const webcamElement = document.getElementById('webcam');

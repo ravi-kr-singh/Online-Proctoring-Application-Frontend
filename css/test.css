@@ -21,6 +21,16 @@ body {
 	padding: 5%;
 	box-shadow: 1px 1px 7px -1px rgba(0, 0, 0, 0.59);
 }
+#wrapper2 {
+	width: 90%;
+	height: auto;
+	margin: 10;
+	margin-left: 5%;
+	margin-right: 5%;
+	background-color: white;
+	padding: 5%;
+	box-shadow: 1px 1px 7px -1px rgba(0, 0, 0, 0.59);
+}
 
 h1 {
 	font-family: 'Staatliches', cursive;
@@ -45,10 +55,10 @@ h1 {
 	color: white;
 	background-color: #ea6153;
 	padding: 1%;
-	font-size: 2em;
-	text-align: center;
-	margin-top: 2%;
-	margin-bottom: 5%;
+	font-size: 1.5em;
+
+	margin-top: 4%;
+	margin-bottom: 1.5%;
 }
 
 textarea[type=text] {
@@ -151,11 +161,6 @@ textarea[type=text] {
 #modal-footer:hover {
 	text-shadow: 1px 0px 7px rgba(0, 0, 0, 0.59);
 }
-
-#question, #answer, #btn, #modal {
-	display: none;
-}
-
 
 .timer{
 	font-size: x-large;
