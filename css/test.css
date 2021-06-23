@@ -191,6 +191,8 @@ textarea[type=text] {
     position: fixed;
     top: 0px;
     right: 0px;
+	width : 288px;
+	height: 300px;
  
     
 }
