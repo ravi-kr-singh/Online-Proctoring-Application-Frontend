@@ -23,7 +23,10 @@ function hideSpinner() {
    
 }
 
-var JWT_Token;
+var JWT_Token ;
+
+
+
 
 function begin() {
     showSpinner();
@@ -44,6 +47,12 @@ function begin() {
             // console.log(`JWT TOken : ${data}`)
             hideSpinner();
             JWT_Token =`${data}`;
+
+            localStorage.setItem("SavedToken",JWT_Token);
+            axios.defaults.headers.common['Authorization'] = JWT_Token;
+          
+
+
             window.location.href = 'start_test.html';
            
             console.log(JWT_Token)

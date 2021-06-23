@@ -4,6 +4,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/test.css">
     <script src="jquery/jquery-3.3.1.min.js"></script>  
+    <script src="js/axios.min.js"></script>
+    <script type="text/javascript" src="js/webcam-easy.min.js"></script>
 
    
   </head>
@@ -15,21 +17,13 @@
         <button id="start" onclick="startGame()">Start Test</button>
     
     </div> 
+    <video id="webcam"  class="stuck"   width="384" height="288" autoplay="true" muted="muted"></video>
+    <canvas id="canvas" class="d-none"></canvas>
+    <audio id="snapSound" src="audio/snap.wav" preload = "auto"></audio>
 
     
 
-
-    
-
-
-
-    <script>
-    
-    function startGame() {
-	    window.location.href = 'test.html';
-    }
-    
-    </script>
+    <script src="js/start_test.js"></script>
 
   </body>
 </html>

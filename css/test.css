@@ -186,3 +186,11 @@ textarea[type=text] {
 #canvas {
 	display: none;
 }
+
+.stuck {
+    position: fixed;
+    top: -60px;
+    right: 0px;
+    width: 200px;
+    
+}

@@ -3,7 +3,9 @@
     <title>Test</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/test.css">
+    <script type="text/javascript" src="js/webcam-easy.min.js"></script>
     <script src="jquery/jquery-3.3.1.min.js"></script>  
+    <script src="js/axios.min.js"></script>
     
 
    
@@ -61,31 +63,15 @@
         
         
     
-    </div> <!-- #wrapper -->
-
-    <!-- <video id="webcam" autoplay playsinline width="320" height="240"></video>
+    </div> 
+    <video id="webcam"  class="stuck"   width="384" height="288" autoplay="true" muted="muted"></video>
     <canvas id="canvas" class="d-none"></canvas>
-    <a href="#" id="download-photo" download="selfie.png" target="_blank" title="Save Photo" class="d-none"><i class="material-icons">file_download</i></a>     
+    <audio id="snapSound" src="audio/snap.wav" preload = "auto"></audio>
+    
 
-    <img id="blah" src="#" alt="your image" /> -->
-
-
-    <!-- <div class="contentarea"> -->
-        <!-- <h1>
-            Using Javascript to capture Photo
-        </h1> -->
-        <!-- <div class="camera"> -->
-            <video id="video">Video stream not available.</video>
-        <!-- </div> -->
-        <!-- <div><button id="startbutton">Take photo</button></div> -->
-        <canvas id="canvas"></canvas>
-        <!-- <div class="output">
-            <img id="photo" alt="The screen capture will appear in this box.">
-        </div> -->
-    <!-- </div> -->
-
-    <script type="text/javascript" src="https://unpkg.com/webcam-easy/dist/webcam-easy.min.js"></script>
-    <script src='js/test.js'></script>
+    <script  src='js/main.js'></script>
+    <script  src='js/start_test.js'></script>
+    <script  src='js/test.js'></script>
 
   </body>
 </html>
