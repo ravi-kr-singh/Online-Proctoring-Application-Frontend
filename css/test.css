@@ -189,7 +189,7 @@ textarea[type=text] {
 
 .stuck {
     position: fixed;
-    top: 0px;
+    top: -43px;
     right: 0px;
 	width : 335px;
 	height: 300px;
