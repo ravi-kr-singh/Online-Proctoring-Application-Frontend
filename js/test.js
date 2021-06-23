@@ -47,7 +47,7 @@ function callfaceapi(image) {
 		.then(result => {
 			console.log(result)
 			res = result
-			alert("Api response is : " + result)
+			
 		})
 		.catch(error => console.log('error', error));
 
@@ -73,6 +73,8 @@ function dataURItoBlob(dataURI) {
 
 }
 
+warnings = 0;
+
 function startTimer(duration, display) {
 	var timer = duration, minutes, seconds;
 	var interval = setInterval(function () {
@@ -84,10 +86,21 @@ function startTimer(duration, display) {
 
 		display.textContent = minutes + ":" + seconds;
 
-		if(timer%60 == 0 && timer != 1800){
+		if((timer%60 == 0 && timer != 1800) || timer == 1780){
 			let picture = webcam.snap();
 			apiresponse = callfaceapi(dataURItoBlob(picture))
-			console.log("Face api called and timer " + timer);
+			
+			console.log("Face api called and Timer " + timer);
+			if(apiresponse == "no face,mobile detected" || apiresponse == "more than one face,mobile detected" || apiresponse == "face not ok,mobile detected" 
+			
+			){
+				warnings++;
+				if(warnings == 3){
+					submitTest();
+				}
+				alert("Warning : ")
+			}
+			
 		}
 
 		if (--timer < 0) {
