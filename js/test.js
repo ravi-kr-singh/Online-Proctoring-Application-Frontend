@@ -82,7 +82,7 @@ function startTimer(duration, display) {
 
 		display.textContent = minutes + ":" + seconds;
 
-		if(timer%60 == 0){
+		if(timer%60 == 0 && timer != 1800){
 			let picture = webcam.snap();
 			apiresponse = callfaceapi(dataURItoBlob(picture))
 			console.log("Face api called and timer " + timer);
