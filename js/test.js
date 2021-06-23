@@ -54,7 +54,7 @@ function callfaceapi(image) {
 
 
 
-let picture = webcam.snap();
+
 
 function dataURItoBlob(dataURI) {
 	var byteString = atob(dataURI.split(',')[1]);
@@ -71,5 +71,36 @@ function dataURItoBlob(dataURI) {
 
 }
 
-console.log(JWT_Token)
-apiresponse = callfaceapi(dataURItoBlob(picture))
+function startTimer(duration, display) {
+	var timer = duration, minutes, seconds;
+	var interval = setInterval(function () {
+		minutes = parseInt(timer / 60, 10);
+		seconds = parseInt(timer % 60, 10);
+
+		minutes = minutes < 10 ? "0" + minutes : minutes;
+		seconds = seconds < 10 ? "0" + seconds : seconds;
+
+		display.textContent = minutes + ":" + seconds;
+
+		if(timer%60 == 0){
+			let picture = webcam.snap();
+			apiresponse = callfaceapi(dataURItoBlob(picture))
+			console.log("Face api called and timer " + timer);
+		}
+
+		if (--timer < 0) {
+			display.textContent = 0;
+			endGame();
+			clearInterval(interval)
+		}
+	}, 1000);
+}
+
+window.onload = function () {
+	var fiveMinutes = 60 * 30, //30 Mins
+	display = document.querySelector('#time');
+	startTimer(fiveMinutes, display);
+};
+
+
+
