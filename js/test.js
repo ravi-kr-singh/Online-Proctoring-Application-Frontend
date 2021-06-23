@@ -35,7 +35,7 @@ function startTimer(duration, display) {
 
 		if (--timer < 0) {
 			display.textContent = 0;
-			endGame();
+			submitTest();
 			clearInterval(interval)
 		}
 	}, 1000);
@@ -209,9 +209,9 @@ function dataURItoBlob(dataURI) {
 })();
 
 function callfaceapi(image) {
-	console.log("called")
+	console.log("Calling FACE API")
 	var myHeaders = new Headers();
-	myHeaders.append("Authorization", "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6InVzZXJuYW1hbiIsImV4cCI6MTYyMjM4MTA3MH0.6IAevd6B0kYqwcZW6qn-himwhOtLpRsUDeNPF9JKwkw");
+	myHeaders.append("Authorization", JWT_Token);
 
 	var formdata = new FormData();
 	formdata.append("image", image, "my.jpeg");
