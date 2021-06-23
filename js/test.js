@@ -21,12 +21,14 @@ function submitTest() {
 	window.location.href = 'finish_test.html';
 }
 
-JWT_Token = localStorage.getItem('SavedToken');
+
 
 
 function callfaceapi(image) {
 	console.log("Calling FACE API")
 	var myHeaders = new Headers();
+	JWT_Token = localStorage.getItem('SavedToken');
+	console.log(JWT_Token)
 	myHeaders.append("Authorization", JWT_Token);
 
 	var formdata = new FormData();
