@@ -21,16 +21,13 @@ function submitTest() {
 	JWT_Token = localStorage.getItem('SavedToken');
 	myHeaders.append("Authorization", JWT_Token);
 
-	
-
-    var ans1 = $('#ans1').val();
-	
-	var ans2 = $('#ans2').val();
-	var ans3 = $('#ans3').val();
-	var ans4 = $('#ans4').val();
-	var ans5 = $('#ans5').val();
-
-	const data = '{"Answer1": "gj hjg ug " }'
+	const data = '{"Answer1":"John", "age":30, "car":null}'
+	var data = {};
+    data.ans1 = $('#ans1').val();
+	data.ans2 = $('#ans2').val();
+	data.ans3 = $('#ans3').val();
+	data.ans4 = $('#ans4').val();
+	data.ans5 = $('#ans5').val();
    
 
 	var requestOptions = {
@@ -43,7 +40,7 @@ function submitTest() {
 
 	
 	fetch("https://nmnrna.pythonanywhere.com/submit", requestOptions)
-		.then(response => response.text())
+		.then(response => response.json())
 		.then(result => {
 			
             console.log('answers submitted to server :', result);
@@ -56,6 +53,9 @@ function submitTest() {
 			webcam.stop()
 			window.location.href = 'finish_test_fail.html';
 		});
+
+
+	
 
 }
 
