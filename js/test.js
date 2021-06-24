@@ -18,7 +18,15 @@ document.addEventListener('visibilitychange', function(){
 function submitTest() {
     // Call submit answer api here.
 
-	const data = { "question1" : "answer 1" };
+
+
+	var payload = {
+		a: 1,
+		b: 2
+	};
+	
+	var data = new FormData();
+	data.append( "json", JSON.stringify( payload ) );
 
 	fetch('https://nmnrna.pythonanywhere.com/submit', {
 	method: 'POST', // or 'PUT'
