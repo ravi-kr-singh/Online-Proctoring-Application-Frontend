@@ -23,7 +23,7 @@ function submitTest() {
 
     //data.ans1 = $('#ans1').val();
 
-	const data = { username: 'example' };
+	const data = { "username": "example" };
 
 	fetch('https://nmnrna.pythonanywhere.com/submit', {
 	  method: 'POST', // or 'PUT'
