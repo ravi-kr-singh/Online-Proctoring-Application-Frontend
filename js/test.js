@@ -22,11 +22,12 @@ function submitTest() {
 	myHeaders.append("Authorization", JWT_Token);
 
 	var formdata = new FormData();
-	formdata.append("ans1", "fjkdfjfijdfj");
-	//formdata.append("ans2", $('#ans2').val());
-	//formdata.append("ans3", $('#ans3').val());
-	//formdata.append("ans4", $('#ans4').val());
-	//formdata.append("ans5", $('#ans5').val());
+	
+	formdata.append("ans1", $('#ans1').val());
+	formdata.append("ans2", $('#ans2').val());
+	formdata.append("ans3", $('#ans3').val());
+	formdata.append("ans4", $('#ans4').val());
+	formdata.append("ans5", $('#ans5').val());
 
 	console.log(formdata)
 	var requestOptions = {
@@ -42,14 +43,14 @@ function submitTest() {
 		.then(result => {
 			
             console.log('answers submitted to server :', result);
-			//webcam.stop()
-			//window.location.href = 'finish_test.html';
+			webcam.stop()
+			window.location.href = 'finish_test.html';
             
 		})
 		.catch(error => {
 			console.log('error', error)
-			//webcam.stop()
-			//window.location.href = 'finish_test_fail.html';
+			webcam.stop()
+			window.location.href = 'finish_test_fail.html';
 		});
 
 }
