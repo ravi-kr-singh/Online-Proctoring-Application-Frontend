@@ -22,13 +22,14 @@ function submitTest() {
 }
 
 
+warnings = 0;
 
 
 function callfaceapi(image) {
-	console.log("Calling FACE API")
+
 	var myHeaders = new Headers();
 	JWT_Token = localStorage.getItem('SavedToken');
-	console.log(JWT_Token)
+	console.log("JWT Token"+JWT_Token)
 	myHeaders.append("Authorization", JWT_Token);
 
 	var formdata = new FormData();
@@ -41,63 +42,16 @@ function callfaceapi(image) {
 		redirect: 'follow'
 	};
 
-	let res;
+	
 	fetch("https://nmnrna.pythonanywhere.com/face", requestOptions)
 		.then(response => response.text())
 		.then(result => {
-			console.log("Result : " + result)
-			res = result
-			
-		})
-		.catch(error => console.log('error', error));
+			console.log("face call api result : " + result)
+			apiresponse = result
 
-	return res;
-}
-
-
-
-
-
-function dataURItoBlob(dataURI) {
-	var byteString = atob(dataURI.split(',')[1]);
-	var mimeString = dataURI.split(',')[0].split(':')[1].split(';')[0]
-	var ab = new ArrayBuffer(byteString.length);
-	var ia = new Uint8Array(ab);
-	for (var i = 0; i < byteString.length; i++) {
-		ia[i] = byteString.charCodeAt(i);
-	}
-
-
-	var blob = new Blob([ab], { type: mimeString });
-	return blob;
-
-}
-
-warnings = 0;
-
-function startTimer(duration, display) {
-	var timer = duration, minutes, seconds;
-	var interval = setInterval(function () {
-		minutes = parseInt(timer / 60, 10);
-		seconds = parseInt(timer % 60, 10);
-
-		minutes = minutes < 10 ? "0" + minutes : minutes;
-		seconds = seconds < 10 ? "0" + seconds : seconds;
-
-		display.textContent = minutes + ":" + seconds;
-
-		if(timer%30 == 0  && timer!=1800){
-			let picture = webcam.snap();
-			let apiresponse = callfaceapi(dataURItoBlob(picture))
-			
-			
-			console.log("Face api called and Timer " + timer);
 			if(apiresponse !="face ok,no mobile"  ){
 				warnings++;
-				console.log("API RESPONSE IS : " + apiresponse);
-
 				
-
 				let alertmsg;
 				if(apiresponse == "no face,mobile detected"){
 					alertmsg = " Mobile detected and also no face detected."
@@ -128,6 +82,53 @@ function startTimer(duration, display) {
 					submitTest();
 				}
 			}
+
+
+			
+		})
+		.catch(error => console.log('error', error));
+
+	
+}
+
+
+
+
+
+function dataURItoBlob(dataURI) {
+	var byteString = atob(dataURI.split(',')[1]);
+	var mimeString = dataURI.split(',')[0].split(':')[1].split(';')[0]
+	var ab = new ArrayBuffer(byteString.length);
+	var ia = new Uint8Array(ab);
+	for (var i = 0; i < byteString.length; i++) {
+		ia[i] = byteString.charCodeAt(i);
+	}
+
+
+	var blob = new Blob([ab], { type: mimeString });
+	return blob;
+
+}
+
+
+
+function startTimer(duration, display) {
+	var timer = duration, minutes, seconds;
+	var interval = setInterval(function () {
+		minutes = parseInt(timer / 60, 10);
+		seconds = parseInt(timer % 60, 10);
+
+		minutes = minutes < 10 ? "0" + minutes : minutes;
+		seconds = seconds < 10 ? "0" + seconds : seconds;
+
+		display.textContent = minutes + ":" + seconds;
+
+		if( (timer%30 == 0  && timer!=1800) || timer == 1785){
+			let picture = webcam.snap();
+			callfaceapi(dataURItoBlob(picture))
+		
+			console.log("Face api called at Timer :  " + timer);
+			
 			
 		}
 
