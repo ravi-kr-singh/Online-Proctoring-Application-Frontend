@@ -93,7 +93,7 @@ function startTimer(duration, display) {
 			console.log("Face api called and Timer " + timer);
 			if(apiresponse !="face ok,no mobile"  ){
 				warnings++;
-				
+				console.log(apiresponse);
 				var alertmsg;
 				if(apiresponse == "no face,mobile detected"){
 					alertmsg = " Mobile detected and also no face detected."
@@ -129,7 +129,7 @@ function startTimer(duration, display) {
 
 		if (--timer < 0) {
 			display.textContent = 0;
-			endGame();
+			submitTest();
 			clearInterval(interval)
 		}
 	}, 1000);
