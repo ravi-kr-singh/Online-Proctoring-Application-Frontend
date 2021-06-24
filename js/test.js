@@ -21,20 +21,23 @@ function submitTest() {
 	JWT_Token = localStorage.getItem('SavedToken');
 	myHeaders.append("Authorization", JWT_Token);
 
+	
 
-	var data = {};
-    data.ans1 = $('#ans1').val();
-	data.ans2 = $('#ans2').val();
-	data.ans3 = $('#ans3').val();
-	data.ans4 = $('#ans4').val();
-	data.ans5 = $('#ans5').val();
+    var ans1 = $('#ans1').val();
+	ans1.stringify();
+	var ans2 = $('#ans2').val();
+	var ans3 = $('#ans3').val();
+	var ans4 = $('#ans4').val();
+	var ans5 = $('#ans5').val();
+
+	const data = '{"Answer1": "gj hjg ug " }'
    
 
 	var requestOptions = {
 		method: 'POST',
 		headers: myHeaders,
 		dataType: "json",
-		data: JSON.stringify(data)
+		data: data
 		
 	};
 
