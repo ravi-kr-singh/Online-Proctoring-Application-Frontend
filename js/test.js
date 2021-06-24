@@ -34,7 +34,7 @@ function submitTest() {
 	headers: {
 		'Content-Type': 'application/json',
 	},
-	body: parsed),
+	body: parsed,
 	})
 	.then(response => response.json())
 	.then(data => {
