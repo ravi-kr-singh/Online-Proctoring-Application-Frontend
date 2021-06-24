@@ -86,19 +86,40 @@ function startTimer(duration, display) {
 
 		display.textContent = minutes + ":" + seconds;
 
-		if((timer%60 == 0 && timer != 1800) || timer == 1780){
+		if(timer%30 == 0 ){
 			let picture = webcam.snap();
 			apiresponse = callfaceapi(dataURItoBlob(picture))
 			
 			console.log("Face api called and Timer " + timer);
-			if(apiresponse == "no face,mobile detected" || apiresponse == "more than one face,mobile detected" || apiresponse == "face not ok,mobile detected" 
-			
-			){
+			if(apiresponse !="face ok,no mobile"  ){
 				warnings++;
+				
+				var alertmsg;
+				if(apiresponse == "no face,mobile detected"){
+					alertmsg = " Mobile detected and also no face detected."
+				}
+				else if(apiresponse == "more than one face,mobile detected"){
+					alertmsg = " More than one face detected and also mobile detected."
+				}
+				else if(apiresponse == "face not ok,mobile detected"){
+					alertmsg = "face is not correct and also mobile detected."
+				}
+				else if(apiresponse == "face ok,mobile detected"){
+					alertmsg = "Mobile detected."
+				}
+				else if(apiresponse == "no face,no mobile"){
+					alertmsg = "No face detected."
+				}
+				else if(apiresponse == "more than one face,no mobile"){
+					alertmsg = "More than one face detected."
+				}
+				else if(apiresponse == "face not ok,no mobile"){
+					alertmsg = "face is not correct."
+				}
+				alert("Warning : " + alertmsg)
 				if(warnings == 3){
 					submitTest();
 				}
-				alert("Warning : ")
 			}
 			
 		}
