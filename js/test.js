@@ -24,7 +24,7 @@ function submitTest() {
 
 
 
-!async function callfaceapi(image) {
+function callfaceapi(image) {
 	console.log("Calling FACE API")
 	var myHeaders = new Headers();
 	JWT_Token = localStorage.getItem('SavedToken');
@@ -41,17 +41,18 @@ function submitTest() {
 		redirect: 'follow'
 	};
 
-	let result = await fetch("https://nmnrna.pythonanywhere.com/face", requestOptions)
+	let res;
+	fetch("https://nmnrna.pythonanywhere.com/face", requestOptions)
 		.then(response => response.text())
 		.then(result => {
 			console.log("Result : " + result)
-			return result;
+			res = result
 			
 		})
 		.catch(error => console.log('error', error));
 
-	return result;
-}();
+	return res;
+}
 
 
 
