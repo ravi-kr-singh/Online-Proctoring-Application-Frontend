@@ -42,8 +42,8 @@ function submitTest() {
 		.then(result => {
 			
             console.log('answers submitted to server :', result);
-			webcam.stop()
-			window.location.href = 'finish_test.html';
+			//webcam.stop()
+			//window.location.href = 'finish_test.html';
             
 		})
 		.catch(error => {
