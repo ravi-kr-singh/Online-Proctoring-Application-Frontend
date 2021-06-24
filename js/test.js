@@ -89,9 +89,7 @@ function startTimer(duration, display) {
 		if(timer%30 == 0  && timer!=1800){
 			let picture = webcam.snap();
 			let apiresponse = callfaceapi(dataURItoBlob(picture))
-			setTimeout(() => {
-
-			}, 1000*2);
+			
 			
 			console.log("Face api called and Timer " + timer);
 			if(apiresponse !="face ok,no mobile"  ){
