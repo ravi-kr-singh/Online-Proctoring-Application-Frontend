@@ -117,10 +117,10 @@ function startTimer(duration, display) {
 					alertmsg = "face is not correct."
 				}
 				else{
-					alertmsg = apiresponse;
+					alertmsg = "unknown response";
 				}
 				alert("Warning : " + alertmsg)
-				if(warnings == 3){
+				if(warnings == 4){
 					submitTest();
 				}
 			}
