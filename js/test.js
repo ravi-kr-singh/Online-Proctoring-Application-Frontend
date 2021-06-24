@@ -20,22 +20,16 @@ function submitTest() {
 
 
 
-	var payload = {
-		"question1": "answer1",
-		"question2": "answer2"
-	};
-
-	var string1 = JSON.stringify(payload);
-
-	var parsed = JSON.parse(string1); 
+	const data = { username: 'example' };
 
 	fetch('https://nmnrna.pythonanywhere.com/submit', {
 	method: 'POST', // or 'PUT'
 	headers: {
 		'Content-Type': 'application/json',
 	},
-	body: parsed,
+	body: JSON.stringify(data),
 	})
+
 	.then(response => response.json())
 	.then(data => {
 		console.log('answers submitted to server :', data);
