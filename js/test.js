@@ -25,14 +25,16 @@ function submitTest() {
 		"question2": "answer2"
 	};
 
+	var string1 = JSON.stringify(payload);
 
+	var parsed = JSON.parse(string1); 
 
 	fetch('https://nmnrna.pythonanywhere.com/submit', {
 	method: 'POST', // or 'PUT'
 	headers: {
 		'Content-Type': 'application/json',
 	},
-	body: JSON.stringify(payload),
+	body: parsed),
 	})
 	.then(response => response.json())
 	.then(data => {
