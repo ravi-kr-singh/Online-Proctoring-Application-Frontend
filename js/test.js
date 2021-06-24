@@ -24,12 +24,8 @@ function submitTest() {
 		a: 1,
 		b: 2
 	};
-	var string1 = JSON.stringify(payload);
 
-	var parsed = JSON.parse(string1);
-
-	var data = new FormData();
-	data.append( "json", parsed);
+	data.append( "json", payload);
 
 	fetch('https://nmnrna.pythonanywhere.com/submit', {
 	method: 'POST', // or 'PUT'
