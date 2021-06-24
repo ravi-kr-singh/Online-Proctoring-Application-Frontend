@@ -24,7 +24,7 @@ function submitTest() {
 	
 
     var ans1 = $('#ans1').val();
-	ans1.stringify();
+	
 	var ans2 = $('#ans2').val();
 	var ans3 = $('#ans3').val();
 	var ans4 = $('#ans4').val();
