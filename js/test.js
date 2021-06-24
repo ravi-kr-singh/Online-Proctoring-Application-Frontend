@@ -17,8 +17,30 @@ document.addEventListener('visibilitychange', function(){
 
 function submitTest() {
     // Call submit answer api here.
-    webcam.stop()
-	window.location.href = 'finish_test.html';
+
+	const data = { "question1" : "answer 1" };
+
+	fetch('https://nmnrna.pythonanywhere.com/submit', {
+	method: 'POST', // or 'PUT'
+	headers: {
+		'Content-Type': 'application/json',
+	},
+	body: JSON.stringify(data),
+	})
+	.then(response => response.json())
+	.then(data => {
+		console.log('answers submitted to server :', data);
+		webcam.stop()
+		window.location.href = 'finish_test.html';
+	})
+	.catch((error) => {
+		console.error('Error, answers not submitted : ', error);
+		webcam.stop()
+		window.location.href = 'finish_test_fail.html';
+	});
+
+    
+	
 }
 
 
