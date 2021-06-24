@@ -35,8 +35,8 @@ function submitTest() {
 	})
 	.catch((error) => {
 		console.error('Error, answers not submitted : ', error);
-		webcam.stop()
-		window.location.href = 'finish_test_fail.html';
+		//webcam.stop()
+		//window.location.href = 'finish_test_fail.html';
 	});
 
     
