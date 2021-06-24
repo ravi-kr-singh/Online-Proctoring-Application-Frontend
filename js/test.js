@@ -41,7 +41,7 @@ function callfaceapi(image) {
 		redirect: 'follow'
 	};
 
-	let res ;
+	let res;
 	fetch("https://nmnrna.pythonanywhere.com/face", requestOptions)
 		.then(response => response.text())
 		.then(result => {
@@ -88,7 +88,7 @@ function startTimer(duration, display) {
 
 		if(timer%30 == 0  && timer!=1800){
 			let picture = webcam.snap();
-			apiresponse = callfaceapi(dataURItoBlob(picture))
+			let apiresponse = callfaceapi(dataURItoBlob(picture))
 			
 			console.log("Face api called and Timer " + timer);
 			if(apiresponse !="face ok,no mobile"  ){
