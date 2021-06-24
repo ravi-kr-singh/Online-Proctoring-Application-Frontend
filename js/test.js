@@ -28,7 +28,7 @@ function submitTest() {
 	//formdata.append("ans4", $('#ans4').val());
 	//formdata.append("ans5", $('#ans5').val());
 
-
+	console.log(formdata)
 	var requestOptions = {
 		method: 'POST',
 		headers: myHeaders,
