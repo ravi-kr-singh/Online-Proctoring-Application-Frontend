@@ -21,8 +21,8 @@ function submitTest() {
 
 
 	var payload = {
-		a: 1,
-		b: 2
+		"question1": "answer1",
+		"question2": "answer2"
 	};
 
 	data.append( "json", payload);
