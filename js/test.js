@@ -24,8 +24,8 @@ function submitTest() {
     //data.ans1 = $('#ans1').val();
 
 	
-	const data = { "answer1": $('#ans1').val() , "answer2": $('#ans2').val(), "answer3": $('#ans3').val() ,
-	"answer4": $('#ans4').val(), "answer5": $('#ans5').val() };
+	const data = { answer1: $('#ans1').val() , answer2: $('#ans2').val(), answer3: $('#ans3').val() ,
+	answer4: $('#ans4').val(), answer5: $('#ans5').val() };
 
 	fetch('https://nmnrna.pythonanywhere.com/submit', {
 	  method: 'POST', // or 'PUT'
@@ -44,8 +44,8 @@ function submitTest() {
 	})
 	.catch((error) => {
 		console.log('error', error)
-		//webcam.stop()
-		//window.location.href = 'finish_test_fail.html';
+		webcam.stop()
+		window.location.href = 'finish_test_fail.html';
 	});
 
 	
