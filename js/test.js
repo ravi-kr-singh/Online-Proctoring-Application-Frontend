@@ -18,32 +18,42 @@ document.addEventListener('visibilitychange', function(){
 function submitTest() {
     // Call submit answer api here.
 
-
-
-	const data = { username: 'example' };
-
-	fetch('https://nmnrna.pythonanywhere.com/submit', {
-	method: 'POST', // or 'PUT'
-	headers: {
-		'Content-Type': 'application/json',
-	},
-	body: JSON.stringify(data),
-	})
-
-	.then(response => response.json())
-	.then(data => {
-		console.log('answers submitted to server :', data);
-		webcam.stop()
-		window.location.href = 'finish_test.html';
-	})
-	.catch((error) => {
-		console.error('Error, answers not submitted : ', error);
-		//webcam.stop()
-		//window.location.href = 'finish_test_fail.html';
-	});
-
+	var data = {};
+    data.ans1 = $('#ans1').val();
+    data.ans2 = $('#ans2').val()
+	data.ans3 = $('#ans3').val();
+    data.ans4 = $('#ans4').val()
+	data.ans5 = $('#ans5').val();
     
+
+	var myHeaders = new Headers();
+	JWT_Token = localStorage.getItem('SavedToken');
+	myHeaders.append("Authorization", JWT_Token);
+
+
+	var requestOptions = {
+		method: 'POST',
+		headers: myHeaders,
+		body: JSON.stringify(data),
+		redirect: 'follow'
+	};
+
 	
+	fetch("https://nmnrna.pythonanywhere.com/submit", requestOptions)
+		.then(response => response.text())
+		.then(result => {
+			
+            console.log('answers submitted to server :', result);
+			webcam.stop()
+			window.location.href = 'finish_test.html';
+            
+		})
+		.catch(error => {
+			console.log('error', error)
+			//webcam.stop()
+			//window.location.href = 'finish_test_fail.html';
+		});
+
 }
 
 
