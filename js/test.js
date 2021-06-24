@@ -86,7 +86,7 @@ function startTimer(duration, display) {
 
 		display.textContent = minutes + ":" + seconds;
 
-		if(timer%30 == 0 ){
+		if(timer%30 == 0  && timer!=1800){
 			let picture = webcam.snap();
 			apiresponse = callfaceapi(dataURItoBlob(picture))
 			
@@ -115,6 +115,9 @@ function startTimer(duration, display) {
 				}
 				else if(apiresponse == "face not ok,no mobile"){
 					alertmsg = "face is not correct."
+				}
+				else{
+					alertmsg = apiresponse;
 				}
 				alert("Warning : " + alertmsg)
 				if(warnings == 3){
