@@ -37,7 +37,7 @@ function submitTest() {
 		method: 'POST',
 		headers: myHeaders,
 		dataType: "json",
-		data: data
+		data: JSON.stringify(data)
 		
 	};
 
