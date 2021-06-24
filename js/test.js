@@ -41,11 +41,11 @@ function callfaceapi(image) {
 		redirect: 'follow'
 	};
 
-	var res ;
+	let res ;
 	fetch("https://nmnrna.pythonanywhere.com/face", requestOptions)
 		.then(response => response.text())
 		.then(result => {
-			console.log(result)
+			console.log("Result : " + result)
 			res = result
 			
 		})
@@ -94,7 +94,7 @@ function startTimer(duration, display) {
 			if(apiresponse !="face ok,no mobile"  ){
 				warnings++;
 				console.log("API RESPONSE IS : " + apiresponse);
-				var alertmsg;
+				let alertmsg;
 				if(apiresponse == "no face,mobile detected"){
 					alertmsg = " Mobile detected and also no face detected."
 				}
