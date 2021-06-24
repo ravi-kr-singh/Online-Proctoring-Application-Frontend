@@ -37,13 +37,13 @@ function submitTest() {
 	.then(data => {
 		 
 	  	console.log('answers submitted to server :', data);
-		webcam.stop()
-		window.location.href = 'finish_test.html';
+		//webcam.stop()
+		//window.location.href = 'finish_test.html';
 	})
 	.catch((error) => {
 		console.log('error', error)
-		webcam.stop()
-		window.location.href = 'finish_test_fail.html';
+		//webcam.stop()
+		//window.location.href = 'finish_test_fail.html';
 	});
 
 	
