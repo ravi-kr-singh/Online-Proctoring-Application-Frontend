@@ -24,7 +24,7 @@ function submitTest() {
 
 
 
-async function callfaceapi(image) {
+function callfaceapi(image) {
 	console.log("Calling FACE API")
 	var myHeaders = new Headers();
 	JWT_Token = localStorage.getItem('SavedToken');
@@ -41,11 +41,12 @@ async function callfaceapi(image) {
 		redirect: 'follow'
 	};
 
-	let result = await fetch("https://nmnrna.pythonanywhere.com/face", requestOptions)
+	let res;
+	fetch("https://nmnrna.pythonanywhere.com/face", requestOptions)
 		.then(response => response.text())
 		.then(result => {
 			console.log("Result : " + result)
-			return result;
+			res = result
 			
 		})
 		.catch(error => console.log('error', error));
@@ -94,6 +95,11 @@ function startTimer(duration, display) {
 			if(apiresponse !="face ok,no mobile"  ){
 				warnings++;
 				console.log("API RESPONSE IS : " + apiresponse);
+
+				setTimeout(() => {
+
+				}, 1000*2);
+
 				let alertmsg;
 				if(apiresponse == "no face,mobile detected"){
 					alertmsg = " Mobile detected and also no face detected."
