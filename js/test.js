@@ -24,7 +24,7 @@ function submitTest() {
 
 
 
-!async function callfaceapi(image) {
+async function callfaceapi(image) {
 	console.log("Calling FACE API")
 	var myHeaders = new Headers();
 	JWT_Token = localStorage.getItem('SavedToken');
