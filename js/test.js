@@ -29,7 +29,7 @@ function submitTest() {
 	data.ans4 = $('#ans4').val();
 	data.ans5 = $('#ans5').val();
    
-s
+
 	var requestOptions = {
 		method: 'POST',
 		headers: myHeaders,
