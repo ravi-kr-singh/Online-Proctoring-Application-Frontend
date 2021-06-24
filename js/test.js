@@ -21,19 +21,19 @@ function submitTest() {
 	JWT_Token = localStorage.getItem('SavedToken');
 	myHeaders.append("Authorization", JWT_Token);
 
-	var formdata = new FormData();
-	
-	formdata.append("ans1", $('#ans1').val());
-	formdata.append("ans2", $('#ans2').val());
-	formdata.append("ans3", $('#ans3').val());
-	formdata.append("ans4", $('#ans4').val());
-	formdata.append("ans5", $('#ans5').val());
 
-	console.log(formdata)
+	var data = {};
+    data.ans1 = $('#ans1').val();
+	data.ans2 = $('#ans2').val();
+	data.ans3 = $('#ans3').val();
+	data.ans4 = $('#ans4').val();
+	data.ans5 = $('#ans5').val();
+   
+
 	var requestOptions = {
 		method: 'POST',
 		headers: myHeaders,
-		body: formdata,
+		body: JSON.stringify(data),
 		redirect: 'follow'
 	};
 
