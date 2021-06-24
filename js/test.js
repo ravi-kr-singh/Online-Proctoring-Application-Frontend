@@ -23,12 +23,9 @@ function submitTest() {
 
     //data.ans1 = $('#ans1').val();
 
-	const data = `{
-		"name" : "Raj",
-		"age" : "32",
-		"married" : "false"
-	}`;
 	
+	const data = { "answer1": $('#ans1').val() , "answer2": $('#ans2').val(), "answer3": $('#ans3').val() ,
+	"answer4": $('#ans4').val(), "answer5": $('#ans5').val() };
 
 	fetch('https://nmnrna.pythonanywhere.com/submit', {
 	  method: 'POST', // or 'PUT'
