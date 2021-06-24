@@ -29,12 +29,13 @@ function submitTest() {
 	data.ans4 = $('#ans4').val();
 	data.ans5 = $('#ans5').val();
    
-
+s
 	var requestOptions = {
 		method: 'POST',
 		headers: myHeaders,
-		body: JSON.stringify(data),
-		redirect: 'follow'
+		dataType: "json",
+		data: JSON.stringify(data)
+		
 	};
 
 	
