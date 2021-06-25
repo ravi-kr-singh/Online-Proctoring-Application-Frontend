@@ -1,5 +1,6 @@
 
 
+
 var changeChances = 5
 document.addEventListener('visibilitychange', function(){
 	if (changeChances==0){
