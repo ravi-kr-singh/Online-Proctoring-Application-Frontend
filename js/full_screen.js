@@ -12,5 +12,6 @@ function requestFullScreen(element) {
     }
 }
 
-var elem = document.body; // Make the body go full screen.
+var elem = document.documentElement; // Make the body go full screen.
 requestFullScreen(elem);
+
