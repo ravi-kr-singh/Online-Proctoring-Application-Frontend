@@ -16,7 +16,7 @@ var elem = document.documentElement; // Make the body go full screen.
 
 function startGame() {
     requestFullScreen(elem);
-    window.location.href = 'test.html';
+    
   
 }
 
