@@ -54,7 +54,7 @@ if (document.addEventListener)
 
 function exitHandler()
 {
- if (document.webkitIsFullScreen || document.mozFullScreen || document.msFullscreenElement !== null)
+  if (!document.webkitIsFullScreen && !document.mozFullScreen && !document.msFullscreenElement)
  {
    
       snackbarfunction2();
