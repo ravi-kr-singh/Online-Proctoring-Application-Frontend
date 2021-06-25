@@ -181,11 +181,11 @@ function startTimer(duration, display) {
 	}, 1000);
 }
 
-window.onload = function () {
+
+
+
+function start_timer(){
 	var fiveMinutes = 60 * 30, //30 Mins
 	display = document.querySelector('#time');
 	startTimer(fiveMinutes, display);
-};
-
-
-
+}
