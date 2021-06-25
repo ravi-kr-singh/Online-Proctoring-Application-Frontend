@@ -53,7 +53,7 @@ function begin() {
           
 
 
-            window.location.href = 'start_test.html';
+            window.location.href = 'test.html';
            
             console.log(JWT_Token)
             

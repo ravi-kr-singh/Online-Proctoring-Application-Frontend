@@ -1,15 +1,22 @@
 
-
+function snackbarfunction(alertmsg) {
+	var x = document.getElementById("snackbar");
+	x.className = "show";
+	x.textContent=alertmsg
+	setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+  }
 
 var changeChances = 5
 document.addEventListener('visibilitychange', function(){
 	if (changeChances==0){
-		alert("Ending Test");
+		
+		snackbarfunction("Ending Test.")
 		submitTest();
 	}
 	else{
 		// document.title = document.visibilityState;
-		alert("WARNING: You have switched tab, this can lead to disqualification");
+		
+		snackbarfunction("WARNING: You have switched tab, this can lead to disqualification")
 		changeChances--;
 		 console.log(changeChances);
 	}
@@ -109,8 +116,10 @@ function callfaceapi(image) {
 				else{
 					alertmsg = "unknown response";
 				}
-				alert("Warning : " + alertmsg)
-				if(warnings == 4){
+				var finalmsg = "WARNING!  "+alertmsg;
+				snackbarfunction(finalmsg)
+				
+				if(warnings == 3){
 					submitTest();
 				}
 			}

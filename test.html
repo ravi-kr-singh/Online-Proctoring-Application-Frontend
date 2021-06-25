@@ -3,6 +3,7 @@
     <title>Test</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/test.css">
+    <link rel="stylesheet" href="css/snackbar.css">
     <script  src='js/full_screen.js'></script>
     <script type="text/javascript" src="js/webcam-easy.min.js"></script>
     <script src="jquery/jquery-3.3.1.min.js"></script>  
@@ -12,62 +13,82 @@
    
   </head>
   <body>
-    <div class="timer">Test Ends in <span id="time">30:00</span> minutes!</div>
-    <div id="wrapper2">
-        
-        
-        <div id="question">
-           
-            <p id="q" id ="ques1"> Q1. What is s the primary difference between process and thread? </p>
-        </div> <!-- #question -->
-        
-        <textarea  type="text" id ="ans1" placeholder="Write your answer" name="answer" id="answer">
-          
-         </textarea>
 
-         <div id="question" >
-           
-            <p id="q" id ="ques2">Q2. List out different OOPS principles?</p>
-        </div> <!-- #question -->
-        
-        <textarea  type="text" id ="ans2" placeholder="Write your answer" name="answer" id="answer">
-          
-         </textarea>
-        
-         <div id="question">
-           
-            <p id="q" id ="ques3">Q3. What is an abstract class?</p>
-        </div> <!-- #question -->
-        
-        <textarea  type="text" id ="ans3" placeholder="Write your answer" name="answer" id="answer">
-          
-         </textarea>
-         <div id="question">
-           
-            <p id="q" id ="ques4">Q4. Distinguish between constructor and method</p>
-        </div> <!-- #question -->
-        
-        <textarea  type="text" id ="ans4" placeholder="Write your answer" name="answer" id="answer">
-          
-         </textarea>
+    <div id ="start_test_page">
 
-         <div id="question">
-           
-            <p id="q" id ="ques5">Q5. List out Layers of OSI Model</p>
-        </div> <!-- #question -->
+      <div id="wrapper">
+        <h1>CS-101</h1>
         
-        <textarea  type="text" id ="ans5" placeholder="Write your answer" name="answer" id="answer">
-          
-         </textarea>
-       
-        <button id="btn" onclick="submitTest()">Submit TEST</button>
-        
-        
+        <button id="start" onclick="startGame()">Start Test</button>
+    
     
     </div> 
+    </div>
+
+    <div id ="test_page" style="display: none;">
+
+      <div class="timer">Test Ends in <span id="time">30:00</span> minutes!</div>
+      <div id="wrapper2">
+          
+          
+          <div id="question">
+             
+              <p id="q" id ="ques1"> Q1. What is s the primary difference between process and thread? </p>
+          </div> <!-- #question -->
+          
+          <textarea  type="text" id ="ans1" placeholder="Write your answer" name="answer" id="answer">
+            
+           </textarea>
+  
+           <div id="question" >
+             
+              <p id="q" id ="ques2">Q2. List out different OOPS principles?</p>
+          </div> <!-- #question -->
+          
+          <textarea  type="text" id ="ans2" placeholder="Write your answer" name="answer" id="answer">
+            
+           </textarea>
+          
+           <div id="question">
+             
+              <p id="q" id ="ques3">Q3. What is an abstract class?</p>
+          </div> <!-- #question -->
+          
+          <textarea  type="text" id ="ans3" placeholder="Write your answer" name="answer" id="answer">
+            
+           </textarea>
+           <div id="question">
+             
+              <p id="q" id ="ques4">Q4. Distinguish between constructor and method</p>
+          </div> <!-- #question -->
+          
+          <textarea  type="text" id ="ans4" placeholder="Write your answer" name="answer" id="answer">
+            
+           </textarea>
+  
+           <div id="question">
+             
+              <p id="q" id ="ques5">Q5. List out Layers of OSI Model</p>
+          </div> <!-- #question -->
+          
+          <textarea  type="text" id ="ans5" placeholder="Write your answer" name="answer" id="answer">
+            
+           </textarea>
+         
+          <button id="btn" onclick="submitTest()">Submit TEST</button>
+          
+          
+      
+      </div> 
+      
+
+    </div>
+
     <video id="webcam"  class="stuck"   autoplay="true" muted="muted"></video>
     <canvas id="canvas" class="d-none"></canvas>
     <audio id="snapSound" src="audio/snap.wav" preload = "auto"></audio>
+
+    <div id="snackbar">Some text some message..</div>
     
     
     <script  src='js/main.js'></script>

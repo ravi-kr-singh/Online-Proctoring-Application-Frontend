@@ -15,9 +15,11 @@ function requestFullScreen(element) {
 var elem = document.documentElement; // Make the body go full screen.
 
 function startGame() {
-    requestFullScreen(elem);
-    
-  
+  document.getElementById('start_test_page').style ="display:none;";
+  document.getElementById('test_page').style ="display:block;";
+  requestFullScreen(elem);
+
+
 }
 
 const webcamElement = document.getElementById('webcam');
