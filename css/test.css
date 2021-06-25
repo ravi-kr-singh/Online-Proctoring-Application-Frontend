@@ -202,12 +202,12 @@ textarea[type=text] {
 	padding: 5px;
 	border: none;
 	cursor: pointer;
-	width: 40%;
+	width: 90%;
 	display: block;
 	margin: 0 auto;
 	outline: none;
 	font-family: 'Staatliches', cursive;
-	letter-spacing: 4px;
+	letter-spacing: 1px;
 	font-size: 1em;	
 	transition: 0.3s;
 }

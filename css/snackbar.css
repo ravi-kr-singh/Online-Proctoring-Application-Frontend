@@ -1,32 +1,37 @@
+
+
+
 #snackbar{
     visibility: hidden;
-    min-width: 250px;
-    margin-left: -125px;
+    position: fixed;
+    width: 450px;
+   
+    top: 8%;
+    left: 50%;
+    margin-left: -225px; /* Negative half of width. */
     background-color: #333;
     color: #fff;
     text-align: center;
     border-radius: 2px;
     padding: 25px;
-    position: fixed;
     z-index: 1;
-    left: 50%;
-    top: 30px;
     font-size: 20px;
   }
 
   #snackbar2 {
     visibility: hidden;
-    min-width: 350px;
-    margin-left: -125px;
+    position: fixed;
+    width: 350px;
+    
+    top: 30%;
+    left: 50%;
+    margin-left: -175px; /* Negative half of width. */
     background-color: #333;
     color: #fff;
     text-align: center;
     border-radius: 2px;
     padding: 25px;
-    position: fixed;
     z-index: 1;
-    left: 50%;
-    top: 150px;
     font-size: 20px;
   }
   
